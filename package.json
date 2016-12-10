@@ -1,0 +1,17 @@
+{
+  "name": "olereader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "lint": "jshint *.js"
+  },
+  "author": "saikat",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jshint": "^2.9.4",
+    "mongoose": "^4.7.2"
+  }
+}
