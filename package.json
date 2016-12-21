@@ -11,7 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "gridfs-stream": "^1.1.1",
     "jshint": "^2.9.4",
-    "mongoose": "^4.7.2"
+    "mongoose": "^4.7.2",
+    "multer": "^1.2.1",
+    "path": "^0.12.7"
   }
 }
