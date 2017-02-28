@@ -61,6 +61,13 @@ module.exports = {
           })
             .on("err", function () { responseHandler.errorRes({err:"Error in upload"},res); })
             .pipe(writestream);
+  },
+  GET_FILE: function(req,res){
+    var readstream = gfs.createReadStream({filename: req.params.filename});
+    readstream.on("error", function(err){
+        res.send("No image found with that title");
+      });
+      readstream.pipe(res);
   }
 }
 

@@ -9,5 +9,9 @@ module.exports = {
 
     postFile: function (req, res) {
         dbLayer.CREATE_FILE(req,res);
+    },
+
+    getFile: function (req,res) {
+        dbLayer.GET_FILE(req,res);
     }
 }

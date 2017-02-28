@@ -24,4 +24,8 @@ module.exports = function (app) {
         console.log("***** ", req.files);
         requestHandler.postFile(req, res);
     });
+
+    app.get('/:filename', function (req, res) {
+        requestHandler.getFile(req,res);
+    })
 }
