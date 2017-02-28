@@ -75,16 +75,6 @@ module.exports = {
   GET_FILE: function (req, res) {
     res.set('Content-Disposition', 'attachment; filename="' + req.params.filename.substring(0,req.params.filename.lastIndexOf('.')) + '.xys"');
     var readstream = gfs.createReadStream({ filename: req.params.filename });
-    var data;
-    // readstream
-    //   .on('data', function (chunk) {
-    //     data += encrypt(chunk);
-    //   })
-    //   .on('end', function () {
-    //     console.log("**** Done *****");
-    //     res.send(data);
-    //   });
-    //var output = fs.createWriteStream('test.txt.enc');
     var cipher = crypto.createCipher(algorithm, password);
     readstream.on("error", function(err){
         res.send("No image found with that title");
@@ -92,4 +82,22 @@ module.exports = {
       readstream.pipe(cipher).pipe(res);
   }
 }
+
+/********Decryption code *************/
+
+/*
+var fs = require('fs');
+var crypto = require('crypto');
+
+var key = 'test';
+var decipher = crypto.createDecipher('aes-256-cbc', key);
+var input = fs.createReadStream('./asamapta.xys');
+var output = fs.createWriteStream('output.pdf');
+
+input.pipe(decipher).pipe(output);
+
+output.on('finish', function() {
+  console.log('Encrypted file written to disk!');
+});
+*/
 
