@@ -56,7 +56,7 @@ module.exports = {
         fs.createReadStream("./uploads/" + req.file.filename)
             .on("end", function () { 
               fs.unlink("./uploads/" + req.file.filename, function (err) { 
-                responseHandler.response({msg:'S  uccess'},res);
+                responseHandler.response({msg:'Success'},res);
               }) 
           })
             .on("err", function () { responseHandler.errorRes({err:"Error in upload"},res); })
